@@ -2,8 +2,8 @@
 
 game::game() {
 	gameBoard = new board();
-	player_one->setPlayerNum(1);
-	player_two->setPlayerNum(2);
+	player_one.setPlayerNum(1);
+	player_two.setPlayerNum(2);
 }
 
 
@@ -12,11 +12,6 @@ game::~game() {
 }
 
 void game::printTitleCard() {
-	std::cout << "  <><>    <><><>      <><>      <><>    <><><>    <><><>" << std::endl;
-	std::cout << " <>  <>   <>   <>   <>    <>   <>  <>   <>   <>   <>" << std::endl;
-	std::cout << "<><<>><>  <><><>   <>         <><<>><>  <>    <>  <><><>" << std::endl;
-	std::cout << "<>    <>  <>   <>   <>    <>  <>    <>  <>   <>   <>" << std::endl;
-	std::cout << "<>    <>  <>   <>     <><>    <>    <>  <><><>    <><><>" << std::endl << std::endl;;
 	std::cout << "<><><><>  <><><><>     <><>    <><><><>    <><>       <><>    <><><><>     <><>     <><><>" << std::endl;
 	std::cout << "   <>        <>      <>    <>     <>      <>  <>    <>    <>     <>      <>    <>   <>" << std::endl;
 	std::cout << "   <>        <>     <>            <>     <><<>><>  <>            <>     <>      <>  <><><>" << std::endl;
@@ -32,11 +27,11 @@ void game::printTitleCard() {
 void game::play() {
 	bool continuePlaying = true;
 	while (continuePlaying) {
-		if (this->victory() || turns == maxturns)
+		if (this->victory() || turns == maxTurns)
 			this->victoryScreen(this->victory());
 		system("CLS");
 		this->printTitleCard();
-		gameBoard->draw;
+		gameBoard.draw();
 
 		std::cout << "\nPlease enter you desired location (row number, a space, then column number)..." << std::endl;
 		std::cout << "Player";
@@ -46,20 +41,20 @@ void game::play() {
 }
 
 int game::victory() {
-	if ((gameBoard->getSpace(0, 0) == gameBoard->getSpace(0, 1)) && (gameBoard->getSpace(0, 1) == gameBoard->getSpace(0, 2)) && (gameBoard->getSpace(0, 0) != 0))
-		return gameBoard->getSpace(0, 0);
-	if ((gameBoard->getSpace(1, 0) == gameBoard->getSpace(1, 1)) && (gameBoard->getSpace(1, 1) == gameBoard->getSpace(1, 2)) && (gameBoard->getSpace(1, 0) != 0))
-		return gameBoard->getSpace(1, 0);
-	if ((gameBoard->getSpace(2, 0) == gameBoard->getSpace(2, 1)) && (gameBoard->getSpace(2, 1) == gameBoard->getSpace(2, 2)) && (gameBoard->getSpace(2, 0) != 0))
-		return gameBoard->getSpace(2, 0);
-	if ((gameBoard->getSpace(0, 0) == gameBoard->getSpace(1, 0)) && (gameBoard->getSpace(1, 0) == gameBoard->getSpace(2, 0)) && (gameBoard->getSpace(0, 0) != 0))
-		return gameBoard->getSpace(0, 0);
-	if ((gameBoard->getSpace(0, 1) == gameBoard->getSpace(1, 1)) && (gameBoard->getSpace(1, 1) == gameBoard->getSpace(2, 1)) && (gameBoard->getSpace(0, 1) != 0))
-		return gameBoard->getSpace(0, 1);
-	if ((gameBoard->getSpace(0, 2) == gameBoard->getSpace(1, 2)) && (gameBoard->getSpace(1, 2) == gameBoard->getSpace(2, 2)) && (gameBoard->getSpace(0, 2) != 0))
-		return gameBoard->getSpace(0, 2);
-	if ((gameBoard->getSpace(0, 0) == gameBoard->getSpace(1, 1)) && (gameBoard->getSpace(1, 1) == gameBoard->getSpace(2, 2)) && (gameBoard->getSpace(0, 0) != 0))
-		return gameBoard->getSpace(0, 0);
+	if ((gameBoard.getSpace(0, 0) == gameBoard.getSpace(0, 1)) && (gameBoard.getSpace(0, 1) == gameBoard.getSpace(0, 2)) && (gameBoard.getSpace(0, 0) != 0))
+		return gameBoard.getSpace(0, 0);
+	if ((gameBoard.getSpace(1, 0) == gameBoard.getSpace(1, 1)) && (gameBoard.getSpace(1, 1) == gameBoard.getSpace(1, 2)) && (gameBoard.getSpace(1, 0) != 0))
+		return gameBoard.getSpace(1, 0);
+	if ((gameBoard.getSpace(2, 0) == gameBoard.getSpace(2, 1)) && (gameBoard.getSpace(2, 1) == gameBoard.getSpace(2, 2)) && (gameBoard.getSpace(2, 0) != 0))
+		return gameBoard.getSpace(2, 0);
+	if ((gameBoard.getSpace(0, 0) == gameBoard.getSpace(1, 0)) && (gameBoard.getSpace(1, 0) == gameBoard.getSpace(2, 0)) && (gameBoard.getSpace(0, 0) != 0))
+		return gameBoard.getSpace(0, 0);
+	if ((gameBoard.getSpace(0, 1) == gameBoard.getSpace(1, 1)) && (gameBoard.getSpace(1, 1) == gameBoard.getSpace(2, 1)) && (gameBoard.getSpace(0, 1) != 0))
+		return gameBoard.getSpace(0, 1);
+	if ((gameBoard.getSpace(0, 2) == gameBoard.getSpace(1, 2)) && (gameBoard.getSpace(1, 2) == gameBoard.getSpace(2, 2)) && (gameBoard.getSpace(0, 2) != 0))
+		return gameBoard.getSpace(0, 2);
+	if ((gameBoard.getSpace(0, 0) == gameBoard.getSpace(1, 1)) && (gameBoard.getSpace(1, 1) == gameBoard.getSpace(2, 2)) && (gameBoard.getSpace(0, 0) != 0))
+		return gameBoard.getSpace(0, 0);
 	return 0;
 }
 

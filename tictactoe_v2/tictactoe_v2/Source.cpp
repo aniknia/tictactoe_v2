@@ -19,9 +19,7 @@
 #include "stack.h"
 
 int main() {
-	board gameboard;
 
-	gameboard.draw();
 	game g;
 	g.printTitleCard();
 	std::system("pause");

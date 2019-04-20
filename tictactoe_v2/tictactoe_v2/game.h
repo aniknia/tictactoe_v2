@@ -5,6 +5,7 @@
 #include "player.h"
 
 class game {
+
 public:
 	game();
 	~game();
@@ -14,11 +15,11 @@ public:
 	void victoryScreen(int winner);
 
 private:
-	board * gameBoard;
-	player * player_one;
-	player * player_two;
+	board gameBoard;
+	player player_one;
+	player player_two;
 	int turns;
-	int maxturns = 9;
+	int maxTurns = 9;
 };
 
 #endif

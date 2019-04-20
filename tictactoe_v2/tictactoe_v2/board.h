@@ -3,8 +3,8 @@
 
 #include <iostream>
 
-class board
-{
+class board {
+
 public:
 	board();
 	board(board *board_previous);
