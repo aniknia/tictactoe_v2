@@ -23,7 +23,7 @@ int main() {
 
 	gameboard.draw();
 	game g;
-	g.victoryScreen(1);
+	g.printTitleCard();
 	std::system("pause");
 
 	return 0;

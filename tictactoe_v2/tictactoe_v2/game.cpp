@@ -2,6 +2,8 @@
 
 game::game() {
 	gameBoard = new board();
+	player_one->setPlayerNum(1);
+	player_two->setPlayerNum(2);
 }
 
 
@@ -9,11 +11,36 @@ game::~game() {
 
 }
 
+void game::printTitleCard() {
+	std::cout << "  <><>    <><><>      <><>      <><>    <><><>    <><><>" << std::endl;
+	std::cout << " <>  <>   <>   <>   <>    <>   <>  <>   <>   <>   <>" << std::endl;
+	std::cout << "<><<>><>  <><><>   <>         <><<>><>  <>    <>  <><><>" << std::endl;
+	std::cout << "<>    <>  <>   <>   <>    <>  <>    <>  <>   <>   <>" << std::endl;
+	std::cout << "<>    <>  <>   <>     <><>    <>    <>  <><><>    <><><>" << std::endl << std::endl;;
+	std::cout << "<><><><>  <><><><>     <><>    <><><><>    <><>       <><>    <><><><>     <><>     <><><>" << std::endl;
+	std::cout << "   <>        <>      <>    <>     <>      <>  <>    <>    <>     <>      <>    <>   <>" << std::endl;
+	std::cout << "   <>        <>     <>            <>     <><<>><>  <>            <>     <>      <>  <><><>" << std::endl;
+	std::cout << "   <>        <>      <>    <>     <>     <>    <>   <>    <>     <>      <>    <>   <>" << std::endl;
+	std::cout << "   <>     <><><><>     <><>       <>     <>    <>     <><>       <>        <><>     <><><>" << std::endl << std::endl;
+	std::cout << "<>      <>     <><><>" << std::endl;
+	std::cout << "<>      <>    <>    <>" << std::endl;
+	std::cout << " <>    <>         <>" << std::endl;
+	std::cout << "  <>  <>        <>" << std::endl;
+	std::cout << "   <><>       <><><><>" << std::endl;
+}
+
 void game::play() {
 	bool continuePlaying = true;
 	while (continuePlaying) {
 		if (this->victory() || turns == maxturns)
 			this->victoryScreen(this->victory());
+		system("CLS");
+		this->printTitleCard();
+		gameBoard->draw;
+
+		std::cout << "\nPlease enter you desired location (row number, a space, then column number)..." << std::endl;
+		std::cout << "Player";
+
 
 	}
 }

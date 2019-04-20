@@ -8,6 +8,7 @@ class game {
 public:
 	game();
 	~game();
+	void printTitleCard();
 	void play();
 	int victory();
 	void victoryScreen(int winner);
