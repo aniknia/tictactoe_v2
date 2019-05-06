@@ -9,8 +9,9 @@ public:
 	board();
 	board(board *board_previous);
 	~board();
-	void draw();
+	void draw(int gameMode);
 	void update(int row, int col, int playerNum);
+	void clean();
 	bool isCellOpen(int row, int col);
 	int getSpace(int row, int col);
 

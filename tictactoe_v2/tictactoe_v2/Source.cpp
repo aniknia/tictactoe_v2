@@ -19,9 +19,16 @@
 #include "stack.h"
 
 int main() {
-
 	game g;
+	int gameMode = 0;
 	g.printTitleCard();
+	while (gameMode != 4) {
+		gameMode = g.mode();
+		if (gameMode == 4)
+			break;
+		g.setGameMode(gameMode);
+		g.play();
+	}
 	std::system("pause");
 
 	return 0;
