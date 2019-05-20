@@ -1,6 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 
+#include <iostream>
+
 #include "board.h"
 #include "player.h"
 #include "bot.h"

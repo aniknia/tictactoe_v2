@@ -72,11 +72,34 @@ void game::play() {
 
 		while (!cellIsOpen) {
 			std::cout << "\nPlease enter you desired location (row number, a space, then column number)..." << std::endl;
-			std::cin >> x_position >> y_position;
+			if (gameMode != 3) {
+				if (turns % 2 == 1) {
+					player_one.setPosition();
+					x_position = player_one.getXPosition();
+					y_position = player_one.getYPosition();
+				}
+				else {
+					player_two.setPosition();
+					x_position = player_two.getXPosition();
+					y_position = player_two.getYPosition();
+				}
+			}
+			else {
+				if (turns % 2 == 1) {
+					player_one.setPosition();
+					x_position = player_one.getXPosition();
+					y_position = player_one.getYPosition();
+				}
+				else {
+					player_two.setPosition();
+					x_position = player_two.getXPosition();
+					y_position = player_two.getYPosition();
+				}
+			}
 
 			if (gameBoard.isCellOpen(x_position, y_position)) {
 				cellIsOpen = true;
-				if ((turns % 2) == 0)
+				if ((turns % 2) == 1)
 					gameBoard.update(x_position, y_position, player_one.getPlayerNum());
 				else
 					gameBoard.update(x_position, y_position, player_two.getPlayerNum());
@@ -163,12 +186,13 @@ void game::victoryScreen(int winner) {
 		if (continue_playing == 'y') {
 			std::cout << "play" << std::endl;
 			gameBoard.clean();
-			turns = 0;
+			gameBoard.draw(gameMode);
+			turns = 1;
 		}
 		else if (continue_playing == 'n') {
 			std::cout << "stop" << std::endl;
 			gameBoard.clean();
-			turns = 0;
+			turns = 1;
 			gameMode = mode();
 			if (gameMode == 4)
 				exit(0);

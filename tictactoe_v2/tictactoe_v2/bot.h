@@ -9,6 +9,7 @@ class bot : public player {
 public:
 	bot();
 	~bot();
+	void setPosition();
 
 private:
 
