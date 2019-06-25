@@ -1,0 +1,4 @@
+﻿  bot.cpp
+D:\Library\Cpp Practice\tictactoe_v2\tictactoe_v2\tictactoe_v2\tictactoe_v2\bot.cpp(1024,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Library\Cpp Practice\tictactoe_v2\tictactoe_v2\tictactoe_v2\tictactoe_v2\bot.cpp(1060,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  tictactoe_v2.vcxproj -> D:\Library\Cpp Practice\tictactoe_v2\tictactoe_v2\tictactoe_v2\Debug\tictactoe_v2.exe
