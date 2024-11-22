@@ -1,8 +1,5 @@
-# tictactoe_v2
-A C++ update to my previous tictactoe game in C.
-Game is played from the command prompt.
-Best experience is on windows since some windows specific comnmands 
-were used to give the appearance of animations.
+# tictactoe v2
+When I first started my programming journey I started by writing a small tictactoe game in C, this is its older brother written in C++ using OOP. This game was written for the windows command prompt.
 
 Features
 - Simple Bot for PvE
